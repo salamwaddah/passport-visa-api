@@ -1,29 +1,30 @@
 {
-  "name": "salamwaddah/passport-visa-api",
-  "description": "Passport Visa API - an unofficial passportindex.org API",
-  "type": "library",
-  "license": "MIT",
-  "keywords": [
-    "passport",
-    "visa",
-    "index"
-  ],
-  "authors": [
-    {
-      "name": "Salam Waddah",
-      "email": "salamwaddah@gmail.com",
-      "homepage": "https://salamwaddah.com/",
-      "role": "Developer"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "SalamWaddah\\PassportVisa\\": "src/"
-    }
-  },
-  "require": {
-    "php": ">=7.1",
-    "guzzlehttp/guzzle": "^7.8"
-  },
-  "minimum-stability": "stable"
+	"name": "salamwaddah/passport-visa-api",
+	"description": "Passport Visa API - an unofficial passportindex.org API",
+	"type": "library",
+	"license": "MIT",
+	"keywords": [
+		"passport",
+		"visa",
+		"index"
+	],
+	"authors": [
+		{
+			"name": "Salam Waddah",
+			"email": "salamwaddah@gmail.com",
+			"homepage": "https://salamwaddah.com/",
+			"role": "Developer"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"SalamWaddah\\PassportVisa\\": "src/"
+		}
+	},
+	"require": {
+		"php": ">=7.1",
+		"guzzlehttp/guzzle": "^7.8"
+	},
+	"minimum-stability": "stable",
+	"version": "0.0.0"
 }
