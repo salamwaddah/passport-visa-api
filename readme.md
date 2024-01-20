@@ -28,3 +28,12 @@ $info = $passport->info();
 //     "voa" => ["lb", etc...],
 //     "vr" => ["ru", etc...],
 // ] 
+
+## Types
+- visa-free
+- visa-on-arrival
+- electronic-travel-authorization
+- e-visa
+- visa-required
+- not-admitted
+- covid-ban

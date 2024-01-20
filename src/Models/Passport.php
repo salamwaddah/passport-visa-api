@@ -3,46 +3,94 @@
 namespace SalamWaddah\PassportVisa\Models;
 class Passport
 {
-    private $cc;
-    private $vr;
-    private $voa;
-    private $vf;
+    private $countryCode;
 
-    public function __construct(string $cc, array $vr, array $voa, array $vf)
+    private $visaFree;
+
+    private $visaOnArrival;
+
+    private $eta;
+
+    private $eVisa;
+
+    private $visaRequired;
+
+    private $notAdmitted;
+
+    private $covidBan;
+
+    public function __construct(
+        string $countryCode,
+        array  $visaFree,
+        array  $visaOnArrival,
+        array  $eta,
+        array  $eVisa,
+        array  $visaRequired,
+        array  $notAdmitted,
+        array  $covidBan
+    )
     {
-        $this->cc = $cc;
-        $this->vr = $vr;
-        $this->voa = $voa;
-        $this->vf = $vf;
+        $this->countryCode = $countryCode;
+        $this->visaFree = $visaFree;
+        $this->visaOnArrival = $visaOnArrival;
+        $this->eta = $eta;
+        $this->eVisa = $eVisa;
+        $this->visaRequired = $visaRequired;
+        $this->notAdmitted = $notAdmitted;
+        $this->covidBan = $covidBan;
     }
 
     public function toArray(): array
     {
         return [
             'country' => $this->getCountry(),
-            'vr' => $this->listVisaRequired(),
-            'voa' => $this->listVisaOnArrival(),
-            'vf' => $this->listVisaFree(),
+            'visa-free' => $this->getVisaFree(),
+            'visa-on-arrival' => $this->getVisaOnArrival(),
+            'electronic-travel-authorization' => $this->getEta(),
+            'e-visa' => $this->getEVisa(),
+            'visa-required' => $this->getVisaRequired(),
+            'not-admitted' => $this->getNotAdmitted(),
+            'covid-ban' => $this->getCovidBan(),
         ];
     }
 
     public function getCountry(): string
     {
-        return $this->cc;
+        return $this->countryCode;
     }
 
-    public function listVisaOnArrival(): array
+    public function getVisaFree(): array
     {
-        return $this->voa;
+        return $this->visaFree;
     }
 
-    public function listVisaRequired(): array
+    public function getVisaOnArrival(): array
     {
-        return $this->vr;
+        return $this->visaOnArrival;
     }
 
-    public function listVisaFree(): array
+    public function getEta(): array
     {
-        return $this->vf;
+        return $this->eta;
+    }
+
+    public function getEVisa(): array
+    {
+        return $this->eVisa;
+    }
+
+    public function getVisaRequired(): array
+    {
+        return $this->visaRequired;
+    }
+
+    public function getNotAdmitted(): array
+    {
+        return $this->notAdmitted;
+    }
+
+    public function getCovidBan(): array
+    {
+        return $this->covidBan;
     }
 }

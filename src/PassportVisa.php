@@ -35,10 +35,10 @@ class PassportVisa
 
             switch ($item['text']) {
                 case 'visa-free';
-                case 'eVisa';
                 case 'visa-free (EASE)';
                     $status = 'vf';
                     break;
+                case 'eVisa';
                 case 'visa required';
                     $status = 'vr';
                     break;
@@ -54,28 +54,47 @@ class PassportVisa
     {
         $result = $this->fetchData();
 
-        $vf = [];
-        $voa = [];
-        $vr = [];
+        $visaFree = [];
+        $visaOnArrival = [];
+        $eta = [];
+        $eVisa = [];
+        $visaRequired = [];
+        $notAdmitted = [];
+        $covidBan = [];
 
         foreach ($result as $item) {
             $code = $item['code'];
             switch ($item['text']) {
                 case 'visa-free';
-                case 'eVisa';
-                case 'visa-free (EASE)';
-                    $vf[] = $code;
+                    $visaFree[] = $code;
                     break;
-                case 'visa required';
-                    $vr[] = $code;
+                case 'visa on arrival';
+                    $visaOnArrival[] = $code;
+                    break;
+                case 'eTourist';
+                case 'eVisa';
+                case 'pre-enrollment'; // Ivory Coast
+                case 'visa-free (EASE)';
+                case 'visa on arrival / eVisa';
+                    $eVisa [] = $code;
+                    break;
+                case 'eTA';
+                case 'tourist registration'; // Seychelles
+                    $eta [] = $code;
+                    break;
+                case 'not admitted';
+                    $notAdmitted[] = $code;
+                    break;
+                case 'COVID-19 ban';
+                    $covidBan[] = $code;
                     break;
                 default:
-                    $voa[] = $code;
+                    $visaRequired[] = $code;
                     break;
             }
         }
 
-        return new Passport($this->cc, $vr, $voa, $vf);
+        return new Passport($this->cc, $visaFree, $visaOnArrival, $eta, $eVisa, $visaRequired, $notAdmitted, $covidBan);
     }
 
     private function fetchData()
