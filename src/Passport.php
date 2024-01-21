@@ -8,19 +8,19 @@ class Passport
 {
     private $cc;
 
-    private $visaFree;
+    private $visaFree = [];
 
-    private $visaOnArrival;
+    private $visaOnArrival = [];
 
-    private $eta;
+    private $eta = [];
 
-    private $eVisa;
+    private $eVisa = [];
 
-    private $visaRequired;
+    private $visaRequired = [];
 
-    private $notAdmitted;
+    private $notAdmitted = [];
 
-    private $covidBan;
+    private $covidBan = [];
 
     protected function __construct(string $cc)
     {
