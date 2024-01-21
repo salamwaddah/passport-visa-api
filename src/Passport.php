@@ -27,6 +27,13 @@ class Passport
         $this->cc = $cc;
     }
 
+    public static function isSupported(string $cc): bool
+    {
+        $supported = self::supportedCountries();
+
+        return in_array(strtoupper($cc), $supported, true);
+    }
+
     public static function supportedCountries(): array
     {
         $result = [];
@@ -44,9 +51,7 @@ class Passport
 
     public static function make(string $cc): Passport
     {
-        $supported = self::supportedCountries();
-
-        if (! in_array(strtoupper($cc), $supported, true)) {
+        if (! self::isSupported($cc)) {
             throw new \Exception("$cc is unsupported country");
         }
 
