@@ -60,3 +60,8 @@ $passport->listNotAdmitted(); // returns []
 ## Caching
 
 This library does not cache the results, you can use your own caching mechanism to avoid unnecessarily calling passportindex.org everytime. A recommended TTL for your cache is 1 day.
+
+## Testing
+```bash
+composer test
+```

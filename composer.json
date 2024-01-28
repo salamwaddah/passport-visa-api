@@ -18,7 +18,8 @@
 	],
 	"autoload": {
 		"psr-4": {
-			"SalamWaddah\\PassportVisa\\": "src/"
+			"SalamWaddah\\PassportVisa\\": "src/",
+			"SalamWaddah\\PassportVisa\\Tests\\": "tests/"
 		}
 	},
 	"require": {
@@ -27,5 +28,16 @@
 		"guzzlehttp/guzzle": "^7.8"
 	},
 	"minimum-stability": "stable",
-	"version": "1.0.0"
+	"version": "1.0.0",
+	"require-dev": {
+		"pestphp/pest": "^2.33"
+	},
+	"scripts": {
+		"test": "vendor/bin/pest"
+	},
+	"config": {
+		"allow-plugins": {
+			"pestphp/pest-plugin": true
+		}
+	}
 }
