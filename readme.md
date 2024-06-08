@@ -4,11 +4,16 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/salamwaddah/passport-visa-api.svg?style=flat-square)](https://packagist.org/packages/salamwaddah/passport-visa-api)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 
+
 An unofficial passportindex.org API - supports [199 passports](src/countries.csv)
+
+
+### ABANDONED: You may inspect the code but it's no longer maintained, passportindex.org making it more difficult to scrape.
+
 
 ## Showcase website
 
-- [Visa requirements per passport](https://salamwaddah.com/tools/visa-free/passport/ma)
+- [Visa requirements per passport](https://salamwaddah.com) - Page is deleted
 
 ## Installation
 
